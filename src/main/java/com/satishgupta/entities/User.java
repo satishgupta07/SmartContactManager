@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -29,15 +29,15 @@ public class User {
 	private String imageUrl;
 	@Column(length = 500)
 	private String about;
-	
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
 	private List<Contact> contacts = new ArrayList<>();
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public int getId() {
 		return id;
 	}
